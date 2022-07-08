@@ -16,23 +16,17 @@
         ],
         "summary": "친구 추가기능",
         "description": "Add a new pet to the store",
-        "operationId": "addPet",
         "requestBody": {
           "description": "Create a new pet in the store",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            },
-            "application/x-www-form-urlencoded": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
+                "type": "object",
+                "properties": {
+                  "phoneNumber": {
+                    "type": "string"
+                  }
+                }
               }
             }
           },
@@ -40,19 +34,7 @@
         },
         "responses": {
           "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pet"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pet"
-                }
-              }
-            }
+            "description": "Successful operation"
           },
           "405": {
             "description": "Invalid input"
@@ -73,21 +55,10 @@
         ],
         "summary": "친구 목록조회",
         "description": "Add a new pet to the store",
-        "operationId": "addPet",
         "requestBody": {
           "description": "Create a new pet in the store",
           "content": {
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            },
-            "application/x-www-form-urlencoded": {
               "schema": {
                 "$ref": "#/components/schemas/Pet"
               }
@@ -99,11 +70,6 @@
           "200": {
             "description": "Successful operation",
             "content": {
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pet"
-                }
-              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Pet"
@@ -132,21 +98,10 @@
         ],
         "summary": "팔로우 추가기능",
         "description": "Add a new pet to the store",
-        "operationId": "addPet",
         "requestBody": {
           "description": "Create a new pet in the store",
           "content": {
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            },
-            "application/x-www-form-urlencoded": {
               "schema": {
                 "$ref": "#/components/schemas/Pet"
               }
@@ -158,16 +113,6 @@
           "200": {
             "description": "Successful operation",
             "content": {
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pet"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pet"
-                }
-              }
             }
           },
           "405": {
@@ -191,21 +136,10 @@
         ],
         "summary": "친구의 사진을 불러오는 기능",
         "description": "Add a new pet to the store",
-        "operationId": "addPet",
         "requestBody": {
           "description": "Create a new pet in the store",
           "content": {
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            },
-            "application/x-www-form-urlencoded": {
               "schema": {
                 "$ref": "#/components/schemas/Pet"
               }
@@ -217,11 +151,6 @@
           "200": {
             "description": "Successful operation",
             "content": {
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pet"
-                }
-              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Pet"
@@ -250,21 +179,10 @@
         ],
         "summary": "사진 업로드 기능",
         "description": "Add a new pet to the store",
-        "operationId": "addPet",
         "requestBody": {
           "description": "Create a new pet in the store",
           "content": {
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            },
-            "application/x-www-form-urlencoded": {
               "schema": {
                 "$ref": "#/components/schemas/Pet"
               }
@@ -276,11 +194,6 @@
           "200": {
             "description": "Successful operation",
             "content": {
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pet"
-                }
-              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Pet"
@@ -300,7 +213,7 @@
             ]
           }
         ]
-      },
+      }
     },
     "/users": {
       "post": {
@@ -309,21 +222,10 @@
         ],
         "summary": "회원가입기능",
         "description": "Add a new pet to the store",
-        "operationId": "addPet",
         "requestBody": {
           "description": "Create a new pet in the store",
           "content": {
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            },
-            "application/x-www-form-urlencoded": {
               "schema": {
                 "$ref": "#/components/schemas/Pet"
               }
@@ -335,11 +237,6 @@
           "200": {
             "description": "Successful operation",
             "content": {
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pet"
-                }
-              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Pet"
@@ -362,27 +259,16 @@
       }
     },
     "/users/me/photos": {
-      "get":  {
+      "get": {
         "tags": [
           "users"
         ],
         "summary": "내 사진 히스토리를 불러온다",
         "description": "Add a new pet to the store",
-        "operationId": "addPet",
         "requestBody": {
           "description": "Create a new pet in the store",
           "content": {
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            },
-            "application/x-www-form-urlencoded": {
               "schema": {
                 "$ref": "#/components/schemas/Pet"
               }
@@ -394,11 +280,6 @@
           "200": {
             "description": "Successful operation",
             "content": {
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pet"
-                }
-              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Pet"
@@ -427,21 +308,10 @@
         ],
         "summary": "로그인 기능",
         "description": "Add a new pet to the store",
-        "operationId": "addPet",
         "requestBody": {
           "description": "Create a new pet in the store",
           "content": {
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            },
-            "application/xml": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            },
-            "application/x-www-form-urlencoded": {
               "schema": {
                 "$ref": "#/components/schemas/Pet"
               }
@@ -453,11 +323,6 @@
           "200": {
             "description": "Successful operation",
             "content": {
-              "application/xml": {
-                "schema": {
-                  "$ref": "#/components/schemas/Pet"
-                }
-              },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/Pet"
