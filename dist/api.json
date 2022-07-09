@@ -116,8 +116,12 @@
               "application/json": {
                 "schema": {
                   "properties": {
-                    "inviteCode": {
+                    "fileUrl": {
                       "type": "string"
+                    },
+                    "percentage": {
+                      "type": "integer",
+                      "example": 100
                     }
                   }
                 }
