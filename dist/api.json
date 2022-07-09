@@ -14,7 +14,7 @@
         "tags": [
           "friends"
         ],
-        "summary": "친구 추가기능",
+        "summary": "친구 추가",
         "description": "Add a new pet to the store",
         "requestBody": {
           "description": "Create a new pet in the store",
@@ -23,7 +23,7 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "phoneNumber": {
+                  "inviteCode": {
                     "type": "string"
                   }
                 }
@@ -48,20 +48,19 @@
             ]
           }
         ]
-      },
-      "get": {
+      }
+    },
+    "/friends/inviteCode": {
+      "post": {
         "tags": [
           "friends"
         ],
-        "summary": "친구 목록조회",
+        "summary": "친구초대 코드 생성",
         "description": "Add a new pet to the store",
         "requestBody": {
           "description": "Create a new pet in the store",
           "content": {
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
             }
           },
           "required": true
@@ -72,7 +71,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Pet"
+                  "properties": {
+                    "inviteCode": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -91,58 +94,17 @@
         ]
       }
     },
-    "/follows": {
-      "post": {
-        "tags": [
-          "follows"
-        ],
-        "summary": "팔로우 추가기능",
-        "description": "Add a new pet to the store",
-        "requestBody": {
-          "description": "Create a new pet in the store",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            }
-          },
-          "required": true
-        },
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-            }
-          },
-          "405": {
-            "description": "Invalid input"
-          }
-        },
-        "security": [
-          {
-            "petstore_auth": [
-              "write:pets",
-              "read:pets"
-            ]
-          }
-        ]
-      }
-    },
-    "/follows/{followsId}/photos": {
+    "/friends/photo": {
       "get": {
         "tags": [
-          "follows"
+          "friends"
         ],
-        "summary": "친구의 사진을 불러오는 기능",
+        "summary": "친구사진 조회",
         "description": "Add a new pet to the store",
         "requestBody": {
           "description": "Create a new pet in the store",
           "content": {
             "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
             }
           },
           "required": true
@@ -153,7 +115,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Pet"
+                  "properties": {
+                    "inviteCode": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -178,13 +144,17 @@
           "photos"
         ],
         "summary": "사진 업로드 기능",
-        "description": "Add a new pet to the store",
         "requestBody": {
-          "description": "Create a new pet in the store",
           "content": {
-            "application/json": {
+            "multipart/form-data": {
               "schema": {
-                "$ref": "#/components/schemas/Pet"
+                "type": "object",
+                "properties": {
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  }
+                }
               }
             }
           },
@@ -196,7 +166,13 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Pet"
+                  "type": "object",
+                  "properties": {
+                    "fileUrl": {
+                      "type": "string",
+                      "example": "https://cdn.newspenguin.com/news/photo/201912/877_1419_234.jpg"
+                    }
+                  }
                 }
               }
             }
@@ -220,14 +196,20 @@
         "tags": [
           "users"
         ],
-        "summary": "회원가입기능",
+        "summary": "회원가입기능(임시)",
         "description": "Add a new pet to the store",
         "requestBody": {
           "description": "Create a new pet in the store",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Pet"
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "example": "hongbin.kim@naver.com"
+                  }
+                }
               }
             }
           },
@@ -239,7 +221,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Pet"
+                  "type": "object",
+                  "properties": {
+                    "token": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
@@ -258,31 +245,26 @@
         ]
       }
     },
-    "/users/me/photos": {
+    "/users/me/photo": {
       "get": {
         "tags": [
           "users"
         ],
-        "summary": "내 사진 히스토리를 불러온다",
+        "summary": "내 사진 조회",
         "description": "Add a new pet to the store",
-        "requestBody": {
-          "description": "Create a new pet in the store",
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/Pet"
-              }
-            }
-          },
-          "required": true
-        },
         "responses": {
           "200": {
             "description": "Successful operation",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Pet"
+                  "type": "object",
+                  "properties": {
+                    "fileUrl": {
+                      "type": "string",
+                      "example": "https://cdn.newspenguin.com/news/photo/201912/877_1419_234.jpg"
+                    }
+                  }
                 }
               }
             }
@@ -306,14 +288,19 @@
         "tags": [
           "auth"
         ],
-        "summary": "로그인 기능",
+        "summary": "로그인 기능(임시)",
         "description": "Add a new pet to the store",
         "requestBody": {
           "description": "Create a new pet in the store",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Pet"
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "example": "hongbin.kim@naver.com"
+                  }
+                }
               }
             }
           },
@@ -325,7 +312,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Pet"
+                  "type": "object",
+                  "properties": {
+                    "token": {
+                      "type": "string"
+                    }
+                  }
                 }
               }
             }
