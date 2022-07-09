@@ -5,7 +5,7 @@
   },
   "servers": [
     {
-      "url": "localhost:8080"
+      "url": "http://localhost:8080"
     }
   ],
   "paths": {
@@ -57,14 +57,6 @@
         ],
         "summary": "친구초대 코드 생성",
         "description": "Add a new pet to the store",
-        "requestBody": {
-          "description": "Create a new pet in the store",
-          "content": {
-            "application/json": {
-            }
-          },
-          "required": true
-        },
         "responses": {
           "200": {
             "description": "Successful operation",
@@ -101,14 +93,6 @@
         ],
         "summary": "친구사진 조회",
         "description": "Add a new pet to the store",
-        "requestBody": {
-          "description": "Create a new pet in the store",
-          "content": {
-            "application/json": {
-            }
-          },
-          "required": true
-        },
         "responses": {
           "200": {
             "description": "Successful operation",
@@ -613,18 +597,6 @@
       }
     },
     "securitySchemes": {
-      "petstore_auth": {
-        "type": "oauth2",
-        "flows": {
-          "implicit": {
-            "authorizationUrl": "https://petstore3.swagger.io/oauth/authorize",
-            "scopes": {
-              "write:pets": "modify pets in your account",
-              "read:pets": "read your pets"
-            }
-          }
-        }
-      },
       "api_key": {
         "type": "apiKey",
         "name": "api_key",
