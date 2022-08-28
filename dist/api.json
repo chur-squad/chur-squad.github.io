@@ -48,40 +48,6 @@
         ]
       }
     },
-    "/friends/inviteCode": {
-      "post": {
-        "tags": [
-          "friends"
-        ],
-        "summary": "친구초대 코드 생성",
-        "description": "Add a new pet to the store",
-        "responses": {
-          "200": {
-            "description": "Successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "properties": {
-                    "inviteCode": {
-                      "type": "string"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "405": {
-            "description": "Invalid input"
-          }
-        },
-        "security": [
-          {
-            "Bearer": [
-            ]
-          }
-        ]
-      }
-    },
     "/friends/photo": {
       "get": {
         "tags": [
@@ -215,6 +181,45 @@
             "description": "Invalid input"
           }
         }
+      }
+    },
+    "/users/me": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "내 정보 조회",
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "email": {
+                      "type": "string",
+                      "example": "hongbin.kim@naver.com"
+                    },
+                    "inviteCode": {
+                      "type": "string",
+                      "example": "testinvitecode"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        },
+        "security": [
+          {
+            "Bearer": [
+            ]
+          }
+        ]
       }
     },
     "/users/me/photo": {
