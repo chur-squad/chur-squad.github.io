@@ -5,14 +5,14 @@
   },
   "servers": [
     {
-      "url": "http://localhost:8080/api"
+      "url": "http://localhost:8080"
     },
     {
-      "url": "http://54.180.178.64:8080/api"
+      "url": "http://54.180.178.64:8080"
     }
   ],
   "paths": {
-    "/friends": {
+    "/api/friends": {
       "post": {
         "tags": [
           "friends"
@@ -51,7 +51,7 @@
         ]
       }
     },
-    "/friends/photo": {
+    "/api/friends/photo": {
       "get": {
         "tags": [
           "friends"
@@ -89,7 +89,7 @@
         ]
       }
     },
-    "/photos": {
+    "/api/photos": {
       "post": {
         "tags": [
           "photos"
@@ -140,7 +140,7 @@
         ]
       }
     },
-    "/users": {
+    "/api/users": {
       "post": {
         "tags": [
           "users"
@@ -186,7 +186,7 @@
         }
       }
     },
-    "/users/me": {
+    "/api/users/me": {
       "get": {
         "tags": [
           "users"
@@ -225,7 +225,7 @@
         ]
       }
     },
-    "/users/me/photo": {
+    "/api/users/me/photo": {
       "get": {
         "tags": [
           "users"
@@ -261,7 +261,7 @@
         ]
       }
     },
-    "/auth/login": {
+    "/api/auth/login": {
       "post": {
         "tags": [
           "auth"
