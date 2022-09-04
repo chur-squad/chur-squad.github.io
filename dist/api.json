@@ -267,16 +267,14 @@
           "auth"
         ],
         "summary": "로그인 기능(임시)",
-        "description": "Add a new pet to the store",
         "requestBody": {
-          "description": "Create a new pet in the store",
           "content": {
             "application/json": {
               "schema": {
                 "properties": {
-                  "email": {
-                    "type": "string",
-                    "example": "hongbin.kim@naver.com"
+                  "id": {
+                    "type": "integer",
+                    "example": "1"
                   }
                 }
               }
@@ -293,7 +291,8 @@
                   "type": "object",
                   "properties": {
                     "token": {
-                      "type": "string"
+                      "type": "string",
+                      "example": "ZXlKaGJHY2lPaUpJVXpJMU5pSXNJblI1Y0NJNklrcFhWQ0o5LmV5SmxlSEFpT2pFMk5qSTJNelUxTkRrc0ltWnlhV1Z1WkY5cFpDSTZNaXdpYVdRaU9qRXNJbTVoYldVaU9pSkxhVzBnYW1GbGFIbDFiaUlzSW5CaGRIUmxjbTRpT2lJdmNHaHZkRzl6TDJwaFpXaDVkVzR2ZEdWemRDNXFjR2NpZlEuUjNoZVdSd21VdVREVVdEY0FoeEdLSW92TENLNWRYeGZMTFBpTlcyTjV5VQ"
                     }
                   }
                 }
